@@ -1,0 +1,150 @@
+/* -- Footer css
+-------------------------------------- -- */
+
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.radial-bg__footer {
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translate(-50%, 65%);
+    transform: translate(-50%, 65%);
+}
+
+.page-footer {
+    padding: 8rem 0 0;
+    img {
+        max-width: 100%;
+        margin-bottom: 4rem;
+        @include border-radius(0);
+    }
+    h5 {
+        margin-bottom: 6px;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+form.footer-form {
+    position: relative;
+    input[type="email"] {
+        margin-bottom: 3rem;
+        padding-right: 20%;
+    }
+}
+
+.footer-menu {
+    padding: 5rem 0 3.6rem;
+    position: relative;
+    &::before {
+        content: " ";
+        height: 1px;
+        @include content-gradient(to right, #C86DD7, #3023AE);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    p {
+        line-height: 3.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.footer-nav {
+    list-style: none;
+    padding-left: 0;
+    li {
+        a {
+            font-size: 1.6rem;
+            line-height: 3.4rem;
+            color: $para-color;
+            font-weight: 300;
+            transition: all .3s;
+            &:hover,
+            &.active {
+                text-decoration: none;
+                color: $action-color;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    @include flexbox();
+    @include justify-content(between);
+    position: relative;
+    padding: 2.6rem 0 2.3rem;
+    &::before {
+        content: " ";
+        height: 1px;
+        @include content-gradient(to right, #3023AE, #C86DD7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    p {
+        margin-bottom: 0;
+        a{
+            color: $para-color;
+            &:hover{
+                color: $action-color;
+            }
+        }
+    }
+    .dropdown-toggle {
+        font-size: 1.6rem;
+        line-height: 3rem;
+        color: $para-color;
+        font-weight: 300;
+        &::after {
+            display: none;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+        span {
+            color: #fff;
+        }
+        svg {
+            color: #fff;
+            font-weight: 300;
+        }
+    }
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        left: auto !important;
+        -webkit-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+        bottom: 3rem;
+        top: auto !important;
+        @include border-radius(5px);
+        a {
+            display: block;
+            width: 100%;
+            clear: both;
+            font-weight: 300;
+            color: $btn-color;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            font-size: 14px;
+            padding: 0.5rem 1.5rem;
+            border-bottom: 1px solid #eeeeee;
+            &:last-child {
+                border: none;
+            }
+            &:hover {
+                background: $action-color;
+                color: #ffffff;
+            }
+        }
+    }
+}

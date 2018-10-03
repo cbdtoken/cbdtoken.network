@@ -1,0 +1,55 @@
+/* -- Typography
+-------------------------------------- -- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $secondary-font;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 2.4rem;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 6.6rem;
+    color: #fff;
+    margin-bottom: 1.9rem;
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 5.6rem;
+    margin-bottom: 2.2rem;    
+}
+
+h3 {
+    font-size: 3rem;
+    line-height: 4.2rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 28px;
+    color: $para-color;
+    font-weight: 300;
+    margin-bottom: 2.4rem;
+}

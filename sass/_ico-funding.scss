@@ -1,0 +1,123 @@
+/* -- ICO funding css
+-------------------------------------- -- */
+
+.ico-funding {
+    padding-top: 12rem;
+}
+
+.ico-funding-tab {
+    .nav {
+        margin-bottom: 4rem;
+    }
+}
+
+.ico-funding-tab.common-tab {
+    padding-right: 64px;
+}
+
+#tab-faqs {
+    padding-top: 7px;
+}
+
+.feature-content__ico-funding {
+    padding-top: 0;
+    padding-bottom: 5.1rem;
+    img {
+        margin-top: 3.1rem;
+    }
+}
+
+.ico-funding__token-box-wrapper {
+    margin-left: -30px;
+    text-align: center;
+    .token-box {
+        margin-bottom: 3.6rem;
+        opacity: .5;
+        @include border-radius(15px);
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+            opacity: 1;
+        }
+        &:hover {
+            border-color: $action-color;
+        }
+        &:last-child {
+            margin-bottom: 3.8rem;
+        }
+        h4 {
+            text-align: left;
+        }
+    }
+}
+
+.accordion {
+    text-align: left;
+    .card {
+        background: transparent;
+        border: none;
+        padding-left: 2.5rem;
+        .card-header {
+            border: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+        h4 {
+            a {
+                color: $action-color;
+                text-decoration: none;
+                display: block;
+                position: relative;
+                i {
+                    font-size: 1.8rem;
+                    line-height: 3rem;
+                    position: absolute;
+                    top: 0;
+                    left: -2.8rem;
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                    transition: all .3s;
+                }
+                &.collapsed {
+                    color: #fff;
+                    i {
+                        -webkit-transform: rotate(0);
+                        transform: rotate(0);
+                    }
+                }
+                &:hover {
+                    color: $action-color;
+                }
+            }
+        }
+        .card-body {
+            padding: 0;
+            p {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
+
+.update-wrapper {
+    padding-top: 5px;
+}
+
+.card-update {
+    background: transparent;
+    @include border-radius(10px);
+    margin-bottom: 3.9rem;
+    overflow: hidden;
+    img {
+        @include border-radius(0);
+    }
+    .card-body {
+        padding: 2rem 3rem;
+        border: 2px solid #403aa3;
+        border-top: none;
+        @include border-radius(0 0 10px 10px);
+        .card-title {
+            margin-bottom: 1rem;
+        }
+    }
+}

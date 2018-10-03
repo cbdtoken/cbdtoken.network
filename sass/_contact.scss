@@ -1,0 +1,79 @@
+/* -- Contact css
+-------------------------------------- -- */
+
+.contact-form-wrapper {
+    margin-top: 5.9rem;
+}
+
+.contact-form {
+    padding: 4.3rem 4rem 5rem;
+    border: none;
+    h3 {
+        padding-bottom: 2rem;
+        padding-left: 4.5rem;
+        margin-bottom: 4rem;
+        position: relative;
+        &::after {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(135.68deg, #F8A4D8 0%, #6A63FF 100%);
+        }
+        i {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            color: #F8A4D8;
+            @include text-gradient(135deg, #F8A4D8 0%, #6A63FF 100%);
+        }
+    }
+}
+
+.info-widget-wrapper {
+    padding-left: 3rem;
+}
+
+.info-widget {
+    h4 {
+        margin-bottom: 1rem;
+    }
+    p {
+        margin-bottom: 0;
+        a {
+            color: $para-color;
+            &:hover {
+                color: $action-color;
+            }
+        }
+        &.address {
+            margin-bottom: 2.4rem;
+        }
+    }
+    margin-bottom: 4rem;
+}
+
+.common-tab.map-tab-wrapper ul {
+    max-width: 56rem;
+}
+
+.map-tab {
+    padding-bottom: 4rem;
+}
+
+.map-wrapper {
+    background: rgba(64, 57, 212, 1);
+    height: 500px;
+    position: relative;
+    @include border-radius($radius);
+    overflow: hidden;
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        opacity: .8;
+    }
+}

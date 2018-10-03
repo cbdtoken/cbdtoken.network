@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/*-- ===============================================
+
+Product: 'Kryptova – ICO Multipage Template'
+Version: 1.0 
+Author: axilweb
+Date Created: May 18, 2018
+
+==================================================== --*/
+
+/*-- == Table of contents =====================
+
+( Example: Type 'ctrl+f' and then '1.example' to jump to the
+ "example" section. Click 'find' if needed.)
+ 
+1. Custom Animations
+2. Base css
+3. Typography
+4. Form css
+5. Header navbar css
+6. Banner css
+7. Home css
+8. ICO funding css
+9. About css
+10. Blog css
+11. Contact css
+12. Footer css
+
+================================================== --*/
+
+/* -- Imported Fonts
+-------------------------------------- -- */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i,700,700i|Mukta+Mahee:200,300,400,500,600,700,800');
+// Sass Files to Import
+//Common files
+@import 'variables';
+@import 'mixins';
+@import 'base';
+@import 'spacing';
+@import 'typography';
+@import 'form';
+@import 'header-nav';
+@import 'banner';
+//Home
+@import 'home';
+@import 'ico-funding';
+@import 'about';
+@import 'blog';
+@import 'contact';
+@import 'footer';
+//Browser fixes

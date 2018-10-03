@@ -1,0 +1,788 @@
+/* -- Home css
+-------------------------------------- -- */
+
+/* -- Banner css -- */
+
+.banner-slider {
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* -- token-box css -- */
+
+.token-box {
+    padding: 2rem 30px;
+    border: 2px solid transparent;
+    @include border-radius(10px);
+    @include content-gradient(135deg, $bg-color-3, $bg-color-2);
+    background-repeat: no-repeat;
+    transition: all .5s;
+    h3 {
+        margin-bottom: 10px;
+    }
+    p {
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    .token-price {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        color: $para-color;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 2rem;
+        span {
+            display: block;
+            font-family: $secondary-font;
+            font-size: 3rem;
+            line-height: 8.5rem;
+            color: #fff;
+            font-weight: 400;
+            background-color: #2B0C65;
+            @include border-radius(10px);
+            margin-bottom: 2.2rem;
+            padding: .5rem 1.5rem 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.token-slider .token-box,
+.countdown-box .token-box {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.token-slider-wrapper .token-box {
+    border: none;
+}
+
+.token-slider {
+    .token-box {
+        opacity: .5;
+    }
+    .slick-current {
+        .token-box {
+            opacity: 1;
+        }
+        +.slick-slide {
+            .token-box {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* -- Countdown-clock css -- */
+
+.countdown-box {
+    width: 100%;
+    position: absolute;
+}
+
+#clock {
+    font-size: 30px;
+    @include flexbox();
+    div {
+        width: 9rem;
+        margin-right: 10px;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        color: $para-color;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 1.8rem;
+        span {
+            display: block;
+            font-family: $secondary-font;
+            font-size: 5rem;
+            line-height: 8rem;
+            color: #fff;
+            font-weight: 400;
+            background-color: #2B0C65;
+            @include border-radius(10px);
+            margin-bottom: .6rem;
+            padding-top: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    span {
+        color: #fff;
+        display: block;
+        background: blue;
+    }
+}
+
+/* -- Progressbar css -- */
+
+.progress {
+    width: 100%;
+    height: 2rem;
+    background-color: #2b0c65;
+    @include border-radius(10px);
+    margin-bottom: 1.8rem;
+}
+
+.progress-bar {
+    width: 0;
+    background-color: $action-color;
+    @include border-radius(inherit);
+    transition: all 1s !important;
+}
+
+.progress .progress-bar {
+    -webkit-transition: width 2s ease-in-out;
+    -moz-transition: width 2s ease-in-out;
+    -ms-transition: width 2s ease-in-out;
+    -o-transition: width 2s ease-in-out;
+    transition: width 2s ease-in-out;
+}
+
+/* -- Token slider css -- */
+
+.token-slider-wrapper {
+    position: relative;
+    padding-bottom: 2.7rem;
+}
+
+.token-slider {
+    padding-left: calc( (100% - 1110px) / 2 + 480px);
+    .token-box {
+        width: 100%;
+        text-align: center;
+        h4 {
+            text-align: left;
+        }
+        .btn {
+            margin-bottom: .6rem;
+        }
+    }
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-slider {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 30px;
+    .item {
+        padding: 0 15px;
+        .content {
+            height: 100px;
+            background: #fff;
+        }
+        &:focus {
+            outline: none !important;
+        }
+    }
+    .slick-arrow {
+        display: none !important;
+    }
+    .slick-dots {
+        bottom: 0;
+        opacity: .7;
+        display: none !important;
+        li {
+            width: 8px;
+            height: 8px;
+            @include border-radius(50%);
+            background: $btn-color;
+            &.slick-active {
+                background-color: $action-color;
+            }
+        }
+    }
+}
+
+/* --Homepage features section css -- */
+
+.radial-bg__features {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+.feature-wrapper {
+    padding-top: 3rem;
+}
+
+.feature-content {
+    .img-container {
+        height: 100%;
+        position: relative;
+        text-align: right;
+    }
+    .order-md-1 {
+        .img-container {
+            text-align: left;
+        }
+    }
+    &:last-child {
+        padding-bottom: 4.6rem;
+    }
+}
+
+.feature-content__ico-funding {
+    text-align: left;
+    .img-container {
+        text-align: center;
+    }
+}
+
+/* --Homepage benefits-content section css -- */
+
+.benefits-of-solution {
+    padding-bottom: 2rem;
+    [class^="col-"] {
+        margin-bottom: 3rem;
+    }
+}
+
+.benefits-content {
+    height: 100%;
+    border: 2px solid #403aa3;
+    padding: 3rem 3rem 1rem 12.5rem;
+    @include border-radius(10px);
+    position: relative;
+    transition: all .3s;
+    i {
+        font-size: 6.5rem;
+        color: #fff;
+        position: absolute;
+        left: 3rem;
+        color: $para-color;
+        transition: color .3s;
+        &::before {
+            @include text-gradient(135deg, $grad-color, $grad-c-color);
+        }
+    }
+    h3 {
+        margin-bottom: 1rem;
+    }
+    &:hover {
+        border-color: $action-color;
+    }
+}
+
+/* -- Homepage roadmap section css -- */
+
+.roadmap-to-success {
+    padding-bottom: 0;
+    .section-heading {
+        margin-bottom: 3.6rem;
+    }
+}
+
+.radial-bg__roadmap {
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* -- Homepage crowdsale section css  -- */
+
+.crowdsale {
+    padding-bottom: 0;
+}
+
+.token-info {
+    border: 2px solid $btn-color;
+    @include border-radius($radius);
+    margin-bottom: 3rem;
+    .col {
+        border-right: 2px solid $btn-color;
+        .inner-content {
+            height: 100%;
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            color: $para-color;
+            font-weight: 300;
+            text-align: center;
+            padding: 10px;
+            span {
+                font-weight: 400;
+                color: #fff;
+            }
+        }
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
+/* -- Highcharts css -- */
+
+.highcharts-background {
+    fill: transparent;
+}
+
+.highcharts-title,
+.highcharts-subtitle,
+.highcharts-button,
+.highcharts-credits {
+    display: none;
+}
+
+.highcharts-label.highcharts-data-label.highcharts-data-label-color-8 text tspan {
+    color: $para-color !important;
+}
+
+.highcharts-label.highcharts-data-label .highcharts-text-outline {
+    fill: transparent;
+    stroke: transparent;
+}
+
+.highcharts-label.highcharts-data-label .highcharts-text-outline+tspan {
+    font-size: 1.4rem;
+    font-weight: 300;
+    fill: $para-color;
+    stroke: transparent;
+}
+
+.highcharts-point.highcharts-color-0 {
+    fill: #7cb5ec; // stroke: #7cb5ec;
+}
+
+.highcharts-data-label-connector.highcharts-color-0 {
+    stroke: #7cb5ec;
+}
+
+.highcharts-3d-side.highcharts-point.highcharts-color-0 {
+    fill: #639cd3;
+    stroke: #639cd3;
+}
+
+.highcharts-point.highcharts-color-1 {
+    fill: #4039d4;
+    stroke: #4039d4;
+}
+
+.highcharts-tooltip-box {
+    fill: #fff;
+    fill-opacity: 0.6;
+    stroke-width: 0;
+}
+
+.highcharts-tooltip text {
+    fill: white;
+}
+
+.highcharts-data-label-connector.highcharts-color-1 {
+    stroke: #4039d4;
+}
+
+.highcharts-3d-side.highcharts-point.highcharts-color-1 {
+    fill: #2b25a1;
+    stroke: #2b25a1;
+}
+
+.highcharts-point.highcharts-color-2 {
+    fill: #b492e9;
+    stroke: #b492e9;
+}
+
+.highcharts-data-label-connector.highcharts-color-2 {
+    stroke: #b492e9;
+}
+
+.highcharts-3d-side.highcharts-point.highcharts-color-2 {
+    fill: #926ccd;
+    stroke: #926ccd;
+}
+
+.highcharts-point.highcharts-color-3 {
+    fill: #403aa3;
+    stroke: #403aa3;
+}
+
+.highcharts-data-label-connector.highcharts-color-3 {
+    stroke: #403aa3;
+}
+
+.highcharts-3d-side.highcharts-point.highcharts-color-3 {
+    fill: #332d93;
+    stroke: #332d93;
+}
+
+.highcharts-point.highcharts-color-4 {
+    fill: #8085e9;
+    stroke: #8085e9;
+}
+
+.highcharts-data-label-connector.highcharts-color-4 {
+    stroke: #8085e9;
+}
+
+.highcharts-3d-side.highcharts-point.highcharts-color-4 {
+    fill: #676cd0;
+    stroke: #676cd0;
+}
+
+.highcharts-point.highcharts-color-5 {
+    fill: #1496f6;
+    stroke: #1496f6;
+}
+
+.highcharts-data-label-connector.highcharts-color-5 {
+    stroke: #1496f6;
+}
+
+.highcharts-3d-side.highcharts-point.highcharts-color-5 {
+    fill: #1371b6;
+    stroke: #1371b6;
+}
+
+/* -- Homapage team section css -- */
+
+.team {
+    padding-top: 6.2rem;
+    padding-bottom: 0;
+}
+
+.radial-bg__team,
+.radial-bg__funding,
+.radial-bg__blog {
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.common-tab {
+    text-align: center;
+    .nav {
+        border: 2px solid $btn-color;
+        @include border-radius($radius);
+        @include justify-content(space-between);
+        margin: 0 auto 5rem;
+        overflow: hidden;
+        li {
+            a {
+                background-color: transparent;
+                height: 100%;
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+                color: $para-color;
+                font-weight: 300;
+                text-align: center;
+                padding: 10px 2rem;
+                border: none;
+                border-right: 2px solid $btn-color;
+                @include border-radius(0);
+                &.active {
+                    background-color: $btn-color;
+                    color: #fff;
+                    border-color: $btn-color;
+                }
+                &:hover {
+                    border-color: $btn-color;
+                }
+            }
+            &:last-child a {
+                border: none;
+            }
+        }
+    }
+    &.team-tab {
+        .nav {
+            max-width: 57rem;
+        }
+    }
+}
+
+.modal {
+    padding: 15px !important;
+    background: rgba($color: #000000, $alpha: 0.5);
+}
+
+.modal-dialog {
+    max-width: 60rem;
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+
+.modal-content {
+    padding: 50px;
+    text-align: left;
+    background: $bg-color;
+    @include border-radius($radius);
+    overflow: hidden;
+    .modal-body {
+        padding: 0;
+        .img-container {
+            margin-bottom: 3.6rem;
+        }
+    }
+    .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 4rem;
+        color: #fff;
+        text-shadow: none;
+        &:hover {
+            color: $action-color;
+        }
+    }
+}
+
+.member-details {
+    padding: 0 0 0 20px;
+    h3 {
+        line-height: 3.6rem;
+        margin-bottom: 1.6rem;
+        span {
+            display: block;
+            font-size: 1.6rem;
+            color: $para-color;
+        }
+    }
+    p {
+        font-weight: 300;
+        margin-bottom: 2rem;
+    }
+    .social-icons {
+        margin-top: 3rem;
+        a {
+            color: $para-color;
+            &:hover {
+                color: $action-color;
+            }
+        }
+    }
+}
+
+/* -- Latest-blog css -- */
+
+.latest-blog {
+    padding-bottom: 0;
+}
+
+.img-card__blog {
+    h5 {
+        span {
+            margin-bottom: 6px;
+        }
+    }
+}
+
+/* -- Partners section css -- */
+
+.trusted-partners {
+    padding-bottom: 0;
+}
+
+.partners {
+    .partners-logo {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+        text-align: center;
+        padding: 0 15px;
+        margin-bottom: 4rem;
+        img {
+            @include border-radius(0);
+        }
+    }
+}
+
+/* -- Homepage roadmap-to-seccess section css -- */
+
+.roadmap-container {
+    position: relative;
+    padding: 0 0 4.5rem;
+}
+
+.roadmap-line {
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    width: 100%;
+    height: 2px;
+    stroke: url(#linear-gradient);
+    position: relative;
+    z-index: 9;
+}
+
+.roadmap-line-path {
+    opacity: 0;
+    height: 2px;
+    fill: none;
+    stroke-width: 4px;
+    width: 100%;
+}
+
+.roadmap-label {
+    position: relative;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: $action-color;
+    font-weight: 300;
+    text-align: center;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .5s;
+    &.active {
+        opacity: 1;
+    }
+    &:nth-last-of-type(odd) {
+        margin-bottom: 115px;
+    }
+    &:nth-last-of-type(even) {
+        margin-bottom: 175px;
+    }
+    span {
+        display: block;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        color: $para-color;
+        font-weight: 600;
+    }
+    .data {
+        width: 100%;
+        z-index: 7;
+        .line {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: calc(100% + 25px);
+            left: 50%;
+            width: 1px;
+            height: 100px;
+            background: $action-color;
+            transition: all .5s;
+            z-index: 7;
+        }
+        .card {
+            position: absolute;
+            top: calc(100% + 56px);
+            left: 50%;
+            width: 44.5rem;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            transition: all .5;
+            z-index: 10;
+            display: none;
+            border: none;
+            @include border-radius($radius);
+            @include box-shadow(0, 0, 20px, rgba(0, 0, 0, .2));
+            overflow: hidden;
+            .img-container {
+                display: block;
+                img {
+                    @include border-radius(0);
+                }
+            }
+            .card-header {
+                background: transparent;
+                padding: 2.4rem 3rem 1rem;
+                border: none;
+                a {
+                    color: $btn-color;
+                    &:hover {
+                        color: $action-color;
+                    }
+                }
+            }
+            .card-body {
+                padding: 0 3rem 2.6rem;
+                p {
+                    color: #4a4a4a;
+                    margin-bottom: 1rem;
+                }
+                .btn-link {
+                    font-size: 1.5rem;
+                    i {
+                        font-size: 1.2rem;
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+            }
+        }
+    }
+    &:nth-last-of-type(odd) {
+        .data .line {
+            height: 100px;
+        }
+    }
+    &:nth-last-of-type(even) {
+        .data .line {
+            height: 160px;
+        }
+    }
+    &::before,
+    &::after {
+        content: " ";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        display: block;
+        background-color: $action-color;
+        @include border-radius(50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        transition: all .5s;
+    }
+    &::after {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 1px solid $action-color;
+        bottom: -31px;
+    }
+    &.glow {
+        &::before {
+            background-color: $bg-color;
+        }
+        &::after {
+            background-color: $action-color;
+            border-color: $action-color;
+            z-index: -1;
+        }
+    }
+    &:first-child {
+        .card {
+            left: 3rem;
+            transform: translateX(0);
+        }
+    }
+    &:last-child {
+        .card {
+            left: auto;
+            right: 3rem;
+            transform: translateX(0);
+        }
+    }
+    &:hover {
+        &::before {
+            background-color: $bg-color;
+        }
+        &::after {
+            background-color: $action-color;
+            border-color: $action-color;
+            z-index: -1;
+        }
+    }
+}

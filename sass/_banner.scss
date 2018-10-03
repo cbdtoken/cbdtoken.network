@@ -1,0 +1,58 @@
+/* -- Banner css
+-------------------------------------- -- */
+
+.img-container__banner {
+    padding-left: 10rem;
+}
+
+.radial-bg__banner {
+    width: 1200px;
+    height: 1200px;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.banner-wrapper {
+    padding: 8rem 0 11.7rem;
+}
+
+.banner-txt {
+    p {
+        font-size: 2rem;
+        line-height: 3.2rem;
+        margin-bottom: 4.2rem;
+    }
+    .btn {
+        margin-bottom: 4rem;
+    }
+}
+
+/* -- Banner inner css -- */
+
+.banner-wrapper__banner-inner {
+    padding: 4.7rem 0;
+    @include content-gradient(to right, rgba(73, 19, 140, .5) 0%, rgba(52, 20, 119, .5) 100%);
+    .banner-txt {
+        max-width: 100%;
+    }
+    h1 {
+        margin-bottom: 0;
+    }
+}
+
+/* -- 404 banner -- */
+
+.banner-404 {
+    padding: 16rem 3rem 12rem;
+    margin-bottom: 4rem;
+    h1 {
+        font-size: 7rem;
+        line-height: 1;
+        margin-bottom: 4rem;
+    }
+    h3 {
+        margin-bottom: 4rem;
+    }
+}

@@ -1,0 +1,171 @@
+/* -- Form css
+-------------------------------------- -- */
+
+form {
+    position: relative;
+    .err-msg {
+        position: relative;
+        bottom: 26px;
+        font-size: 14px;
+        color: red;
+    }
+    .success-msg {
+        position: relative;
+        bottom: -22px;
+        font-size: 14px;
+        color: #8BC34A;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea,
+.form-control {
+    font-size: 16px;
+    height: 40px;
+    color: #fff;
+    padding: 0 15px;
+    border: 2px solid $btn-color;
+    background: transparent;
+    @include border-radius($radius);
+    outline: none;
+    box-shadow: none;
+    &:focus {
+        color: #fff;
+        background: transparent;
+        border-color: $action-color;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.contact-form {
+    .form-group {
+        position: relative;
+        margin-bottom: 3rem;
+        label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            display: block;
+            font-size: 1.8rem;
+            line-height: 40px;
+            color: $para-color;
+            margin: 0;
+            cursor: text;
+            transition: all .3s;
+        }
+        input,
+        textarea {
+            border: none;
+            padding: 0;
+            border-radius: 0;
+        }
+        textarea {
+            min-height: 8rem;
+            padding-top: 15px;
+        }
+        &::before,
+        &::after {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            display: block;
+            opacity: 0.2;
+            background: linear-gradient(135.68deg, #F8A4D8 0%, #6A63FF 100%);
+            transition: all .3s;
+        }
+        &::after{
+            width: 0;
+            opacity: 1;
+            background: $action-color;
+        }
+        &.focused {
+            label {
+                top: -30px;
+                font-size: 1.4rem;
+                color: $action-color;
+            }
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.search-form {
+    width: 100%;
+    max-width: 35rem;
+    input {
+        height: 5rem;
+        padding-left: 4.5rem;
+    }
+    button.icon-btn {
+        width: 4.5rem;
+        line-height: 5rem;
+        left: 2px;
+        right: auto;
+        color: $para-color;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+button.icon-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    line-height: 40px;
+    color: $btn-color;
+    padding: 0 10px;
+    &:hover {
+        color: $action-color;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: $para-color !important;
+    opacity: 1;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: $para-color !important;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $para-color !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $para-color !important;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    /* Edge */
+    color: $para-color !important;
+    opacity: 1;
+}
+
+:placeholder-shown {
+    /* Standard one last! */
+    color: $para-color !important;
+    opacity: 1;
+}
