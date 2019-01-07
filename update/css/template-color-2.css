@@ -67,10 +67,10 @@
   background: linear-gradient(45deg, #62b33a 0%, #0d400e 100%); }
 
 .timer-text i {
-  border: 2px solid #66a5ad; }
+  border: 2px solid #fff; }
 
 div.timer span {
-  color: #66a5ad; }
+  color: #fff; }
 
 /*------------------ Problem / Soluction section Color css ----------------*/
 .linear-gradient-bg {

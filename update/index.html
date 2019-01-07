@@ -42,6 +42,9 @@
 	.bullets i {
 		color: green;
 	}
+	.alt-color {
+		color: #ccc;
+	}
    </style>
 <script type="text/javascript">
 
@@ -112,7 +115,7 @@
     <section id="banner" class="banner banner-full d-flex align-items-center parallax">
         <!---===banner start=====-->
         <div id="particles-js"></div>
-        <div class="container" style="z-index: 5">
+        <div class="container" style="z-index: 5;margin-top:50px;">
             <div class="banner-text">
                 <div class="row align-items-stretch">
                     <div class="col-lg-6 col-md-6 mb-5 mb-md-0">
@@ -274,7 +277,7 @@
             <div class="row align-items-stretch">
                 <div class="col-lg-8 col-sm-12">
                         <h5 class="small-heading">Crowdsale Distribution</h5>
-                        <h2 class="section-heading">We will sell 30M CBD Token Prior to Trading opening up on DEX exchanges in Q2 2019.</h2>
+                        <h2 class="section-heading">We will sell 30M CBD Tokens Prior to DEX exchange listings in Q2 2019.</h2>
                        
                     <div class="row mt-5">
                         <div class="col-md-4 col-sm-6 mb-3">
@@ -344,14 +347,14 @@
             <div class="row mt-10 text-center">
                 <!---====== Charts section===========-->
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-5 mb-md-0">
-                    <h5 class="small-heading">Token Distribution</h5>
+                    <h5 class="small-heading">Ownership Distribution</h5>
                     <div class="chart-img mt-2">
-                        <img src="images/chart1.png" class="img-fluid" alt="Chart">						                       
+                        <img src="images/chart.png" class="img-fluid" alt="Chart">						                       
                     </div>
                 </div>
                 <!---/col-->
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h5 class="small-heading">Sale Proceed Allocation</h5>
+                    <h5 class="small-heading">Startup Allocation</h5>
                     <div class="chart-img mt-2">
                         <img src="images/chart2.png" class="img-fluid" alt="Chart">
                     </div>
@@ -728,8 +731,9 @@
             <!---/row-->
         
             <div class="row mt-4 align-items-center">                
-                <div class="col-lg-6 col-sm-6 border-right mb-md-0 mb-4">                  
-                    <form id="ajax-contact" method="post" action="contact-mail.php" class="position-relative pr-md-5">
+                <div class="col-lg-6 col-sm-6 border-right mb-md-0 mb-4">
+                	 <form action="https://formspree.io/getcbdtoken@gmail.com" method="post" class="position-relative pr-md-5">
+                        <!--<form method="post" action="contact-mail.php">-->
                         <div id="form-messages" class="notification contact"></div>
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -745,6 +749,7 @@
                         </div>
                         <button type="submit" class="btn btn-alpha mt-2">Send Message <i class="fa fa-angle-right ml-3"></i></button>
                     </form>
+                    
                 </div>
                 <!---/col-->
                 <div class="col-lg-6 col-sm-6 contact-info">
@@ -785,14 +790,16 @@
             <!-- container-start -->
             <div class="row text-white text-center burger">
                 <div class="col-lg-10 offset-lg-1">
+                	
                     <div class="newsletter mb-5">
-                        <h2 class="mb-3">Don't miss out, Stay updated</h2>
-                        <form class="form form-newsletter input-group w-50 mx-auto position-relative" method="post" action="newsletter.php" id="subscribe_now">
+                        <h2 class="mb-3">Don't miss out, Stay updated</h2>                        
+                        <form class="form form-newsletter input-group w-50 mx-auto position-relative" method="post" action="https://formspree.io/getcbdtoken@gmail.com">
                             <div id="mail-messages" class="notification subscribe"></div>
                             <input class="form-control mr-md-2 mr-1" placeholder="Enter@email.com" type="email" name="subscribe_email" id="subscribe_email">
                             <button type="submit" class="input-group-append btn btn-alpha " name="button">Subscribe <i class="fa fa-angle-right ml-3"></i></button>
                         </form>
                     </div>
+                    
                     <div class="footer-social">
                         <h5 class="small-heading mb-3">Let's Connect</h5>
                         <a href="https://twitter.com/cbdtoken" class=""><i class="fab fa-twitter mr-2"></i>  </a>
@@ -805,7 +812,7 @@
             <!---/row-->
             <div class="row text-white text-center">
                 <div class="copyright col-lg-12">
-                    <p class="">All rights reserved <a href="https://www.psthemes.co/" target="_blank" class="alt-color">PS Themes</a> Copyright © 2018</p>
+                    <p class="">Proud member of the <a href="https://tron.network/" target="_blank" class="alt-color">TRON Network</a></p>
                 </div>
             </div>
             <!---/row-->
