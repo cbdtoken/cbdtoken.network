@@ -29,10 +29,10 @@
 
 /*------------------ Button Color css ----------------*/
 .btn-alpha {
-  background-color: #F8CA00;
+  background-color: #c0d531;
 }
 .btn-alpha:hover {
-  background-color: #ffd001;
+  background-color: #c8dd33;
 }
 
 .section-heading {
@@ -57,7 +57,7 @@
   background: -webkit-linear-gradient(45deg, rgba(98,179,58, 0.7) 0%, rgba(13,64,14, 0.8) 100%);
   background: linear-gradient(45deg,   rgba(98,179,58, 0.7) 0%, rgba(13,64,14, 0.8) 100%); }
   .timer-box h2:after {
-    background: #66a5ad; }
+    background: #c0d531; }
 
 .timer-box-inner {
 
@@ -70,7 +70,7 @@
   border: 2px solid #fff; }
 
 div.timer span {
-  color: #fff; }
+  color: #c0d531; }
 
 /*------------------ Problem / Soluction section Color css ----------------*/
 .linear-gradient-bg {

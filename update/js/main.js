@@ -16,7 +16,7 @@ setInterval(function() {
 }, 1000);
 
 function makeTimer() {
-    var endTime = new Date("February 1, 2019 18:00:00 PDT"); // Change timer date form here...!        
+    var endTime = new Date("February 12, 2019 18:00:00 PDT"); // Change timer date form here...!        
     var endTime = (Date.parse(endTime)) / 1000;
     var now = new Date();
     var now = (Date.parse(now) / 1000);
