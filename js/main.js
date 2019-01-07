@@ -1,385 +1,205 @@
-jQuery(function ($) {
+"use strict";
+/*
+====================== components =======================     
+    1.Timer
+    2.Smooth scroll
+    3.Background-paralax
+    4.Header sticky
+    5.Mail function
+    6.Loader JS
+    7.Gear box JS
+    8.Particle Js
+*/
+/*-------------------------- 1.Timer --------------------------*/
+setInterval(function() {
+    makeTimer();
+}, 1000);
 
-    /*-- Strict mode enabled --*/
-    "use strict";
-    var _document = $(document),
-        _window = $(window),
-        _body = $("body");
-
-    //animated navbar-toggler button
-    _document.on('click', '.navbar .navbar-toggler', function () {
-        $(this).toggleClass("change");
-    });
-
-    _document.on('click', function (e) {
-        var _navMenu = $('.navbar-nav li');
-        if ($('.navbar-collapse').hasClass('show')) {
-            if (!_navMenu.is(e.target) && _navMenu.has(e.target).length === 0) {
-                $('.navbar-collapse').removeClass('show');
-                $(".navbar-toggler").removeClass('change');
-            }
-        }
-    });
-
-    //script for box equal height
-    var maxHeight = 0;
-    $(".equalHeight").each(function () {
-        if ($(this).height() > maxHeight) {
-            maxHeight = $(this).height();
-        }
-    });
-    $(".equalHeight").height(maxHeight);
-
-    //Video modal
-    $('.video-popup').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-with-zoom',
-        iframe: {
-            markup: '<div class="mfp-iframe-scaler">' +
-                '<div class="mfp-close"></div>' +
-                '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-                '</div>',
-            patterns: {
-                youtube: {
-                    index: 'youtube.com/',
-                    id: 'v=',
-                    src: '//www.youtube.com/embed/%id%?autoplay=1'
-                }
-            },
-            srcAction: 'iframe_src'
-        }
-
-    });
-
-    //jQuery countdown plugin
-    $('#clock').countdown('2020/10/10').on('update.countdown', function (event) {
-        var _DateInput = '' +
-            '<div><span>%-d</span> Day%!d</div>' +
-            '<div><span>%H</span> Hours</div>' +
-            '<div><span>%M</span> Minutes</div>' +
-            '<div><span>%S</span> Seconds</div>';
-        var $this = $(this).html(event.strftime(_DateInput));
-    });
-
-    // Token slider 
-    $('.token-slider .carousel-container').slick({
-        dots: true,
-        infinite: true,
-        speed: 200,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [{
-                breakpoint: 1199,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ]
-    });
-
-    //Highchart
-    if ($('.pie-chart').length > 0) {
-        Highcharts.chart('container', {
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 50
-                }
-            },
-			tooltip: { enabled: false },            
-            title: {
-                text: 'Contents of Highsoft\'s weekly fruit delivery'
-            },
-            subtitle: {
-                text: '3D donut in Highcharts'
-            },
-            plotOptions: {
-                pie: {
-                    innerSize: 100,
-                    depth: 50
-                }
-            },
-            series: [{
-                data: [
-                    ['Airdrop 5%', 1],
-                    ['Advisors 5%', 1],                    
-                    ['Founder 10%', 2],
-                    ['Token Sale 30%', 6],
-                    ['Exchanges 50%', 10]
-                ]
-            }]
-        });
+function makeTimer() {
+    var endTime = new Date("February 12, 2019 18:00:00 PDT"); // Change timer date form here...!        
+    var endTime = (Date.parse(endTime)) / 1000;
+    var now = new Date();
+    var now = (Date.parse(now) / 1000);
+    var timeLeft = endTime - now;
+    var days = Math.floor(timeLeft / 86400);
+    var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+    var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+    var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+    if (days < "10") {
+        days = "0" + days;
     }
+    if (hours < "10") {
+        hours = "0" + hours;
+    }
+    if (minutes < "10") {
+        minutes = "0" + minutes;
+    }
+    if (seconds < "10") {
+        seconds = "0" + seconds;
+    }
+    $(".days").html(days + "<span>Days</span>");
+    $(".hours").html(hours + "<span>Hours</span>");
+    $(".minutes").html(minutes + "<span>Minutes</span>");
+    $(".seconds").html(seconds + "<span>Seconds</span>");
+}
+var NavBar = $('.navbar ');
+/*---------Timer-end-----------*/
 
-    //SVG Line animation
-    $(".roadmap-to-success").each(function () {
-        $(this).waypoint(function () {
-            var _svgPath = $('.roadmap-line-path'),
-                _svgPathLength = $('.roadmap-line-path').get(0).getTotalLength(),
-                _labelLength = $('.roadmap-label').length;
+/*------------------------------------- 2.Smooth scroll --------------------------------*/
+// redirect-btn - this class for smooth scroll of other button instead of header menu ..! 
+$(document).ready(function() {
+    $('.redirect-btn, .navbar a, .links a').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this.hash);
+        if ($(window).width() < 992) {
+            $('body,html').animate({
+                'scrollTop': target.offset().top - 68
+            }, 400);
+        } else {
+            $('body,html').animate({
+                'scrollTop': target.offset().top - 55
+            }, 400);
+        }
+        $('.navbar-collapse').removeClass('in');
+        $('.navbar-toggle').addClass('collapsed');
+    });
+    /*-------- Smooth scroll-end -----------*/
 
-            _svgPath.css({
-                'opacity': '1',
-                'stroke-dashoffset': _svgPathLength,
-                'stroke-dasharray': _svgPathLength
-            });
-
-            setTimeout(function () {
-                _svgPath.animate({
-                    "stroke-dashoffset": _svgPathLength
-                }, 0, function () {
-                    _svgPath.animate({
-                        "stroke-dashoffset": '0px'
-                    }, {
-                        duration: 1500,
-                        // easing: 'linear',
-                        step: function () {
-                            var a = parseInt(_svgPath.css("stroke-dashoffset"));
-                            for (var i = 0; i < _svgPathLength; i++) {
-                                if (a < _svgPathLength * (_labelLength - i) / _labelLength) {
-                                    $(".roadmap-label.l-" + (i + 1)).fadeIn().addClass("active");
-                                }
-                            }
-                        }
-                    }, function () {
-                        //callback ...
-                    });
-                });
-            });
-            this.destroy();
-        }, {
-            triggerOnce: true,
-            offset: 'bottom-in-view'
-        });
+    /*----------------------------- 3.Background-parallax ---------------------------*/
+    /*$(window).scroll(function(e) {
+        parallax();
     });
 
+    function parallax() {
+        var scrolled = $(window).scrollTop();
+        $('.parallax').css('background-position-y', -(scrolled * 0.2) + 'px');
+    }*/ /*--------- Background-paralax-end ----------*/
 
-    //Show data on click event
-    /*
-    var _roadmapContainer = $('.roadmap-container'),
-        _roadMapLabel = $('.roadmap-label');
+    /*------------------------------- 4.Header sticky -------------------------*/
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var navbarHeight = NavBar.outerHeight();
+    $(document).ready(function(event) {
+        didScroll = true;
+    });
+    $(window).scroll(function(event) {
+        didScroll = true;
+    });
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 100);
 
-    _roadmapContainer.on('click', '.roadmap-label', function () {
-        if ($(this).find('.data.active').length === 0) {
-            //remove
-            _roadmapContainer.find('.data').removeClass('active');
-            $(this).find('.data').addClass('active');
-            _roadMapLabel.removeClass('glow');
-            $(this).addClass('glow');
-
-            if (_window.width() < 768) {
-                _roadmapContainer.find('.data .card').slideUp();
-                $(this).find('.data .card').slideDown(function () {
-                    $('html, body').animate({
-                        scrollTop: $(this).offset().top - 90
-                    }, 500);
-                });
-
-            } else {
-                _roadmapContainer.find('.data .card').fadeOut("slow");
-                $(this).find('.data .card').fadeIn("slow");
+    function hasScrolled() {
+        var st = $(document).scrollTop();
+        if (st + $(window).height() < $(document).height()) {
+            NavBar.addClass('sticky-header');
+            if (st == 0) {
+                NavBar.removeClass('sticky-header');
             }
         }
-    });
+        lastScrollTop = st;
+    }
+});
 
-    _document.on('click', function (e) {
-        if (!_roadMapLabel.is(e.target) && _roadMapLabel.has(e.target).length === 0) {
-            _roadmapContainer.find('.data').removeClass('active');
-            _roadMapLabel.removeClass('glow');
-            if (_window.width() < 768) {
-                _roadmapContainer.find('.data .card').slideUp();
-            } else {
-                _roadmapContainer.find('.data .card').fadeOut();
-            }
-        }
-    });
-	*/
-	
-    // Contact Form
-    $('.contact-form').on('focus', 'input,textarea', function (e) {
-        $(this).parent('.form-group').addClass('focused');
-    });
+/*------------ Hader sticky-end  -------*/
 
-    $('.contact-form').on('blur', 'input,textarea', function (e) {
-        if (!$(this).val()) {
-            $(this).parent('.form-group').removeClass('focused');
-        }
-    })
+// Responsive menu js
+$(document).ready(function(){
+    var topSpace = $('.site-header').height() -2;
+  });
+  var siteToggle = $('.navbar-toggler'),
+      layer=$('.site__layer'),
+      siteMenu= $('.navbar-collapse');
+  siteToggle.on('click', function(){
+    layer.toggleClass('active');
+    $('body').toggleClass('overflow-hidden');
+  });
+  
+  $('.site__layer, #navbarCollapse a').on('click', function(){
+    layer.removeClass('active');
+    siteToggle.addClass('collapsed');
+    siteMenu.removeClass('show');
+    $('body').removeClass('overflow-hidden');
 
-    //Global Form validation
-    $('.contact-form').on('submit', function (e) {
+  });
+  
+
+/*--------------------------------- 5.Mail Fucntion -------------------------------*/
+$(function() {
+    var form = $('#ajax-contact');
+    var formMessages = $('#form-messages');
+    $(form).submit(function(e) {
         e.preventDefault();
-        var _self = $(this),
-            data = $(this).serialize(),
-            __selector = _self.closest('input,textarea');
-
-        _self.closest('div').find('input,textarea').removeAttr('style');
-        _self.find('.err-msg').remove();
-        _self.find('.form-success').removeClass('form-success');
-
-        $('.submit-loading-img').css('display', 'block');
-        _self.closest('div').find('button[type="submit"]').attr('disabled', 'disabled');
-
+        var formData = $(form).serialize();
         $.ajax({
-            url: 'email/email.php',
-            type: "post",
-            dataType: 'json',
-            data: data,
-            success: function (data) {
-                $('.submit-loading-img').css('display', 'none');
-                _self.closest('div').find('button[type="submit"]').removeAttr('disabled');
-
-                if (data.code == false) {
-                    _self.closest('div').find('[name="' + data.field + '"]').addClass('form-success');
-                    _self.closest('div').find('[name="' + data.field + '"]').parent().after('<div class="err-msg">*' + data.err + '</div>');
+                type: 'POST',
+                url: $(form).attr('action'),
+                data: formData
+            })
+            .done(function(response) {
+                $(formMessages).removeClass('error');
+                $(formMessages).addClass('success');
+                $(formMessages).text(response);
+               
+            })
+            .fail(function(data) {
+                $(formMessages).removeClass('success');
+                $(formMessages).addClass('error');
+                if (data.responseText !== '') {
+                    $(formMessages).text(data.responseText);
                 } else {
-                    _self.find('textarea:last-child').after('<div class="success-msg">' + data.success + '</div>');
-                    _self[0].reset();
-                    $('.contact-form .form-group').removeClass('focused');
-                    setTimeout(function () {
-                        $('.success-msg').fadeOut('slow');
-                    }, 5000);
+                    $(formMessages).text('Oops! An error occured and your message could not be sent.'); /*--------- Contact submission erroe Message ---------------*/
                 }
-            }
-        });
-    });
-
-    //progress bar
-    $(".progress").each(function () {
-        $(this).waypoint(function () {
-            $('.progress-bar').progressbar({
-                transition_delay: 100
             });
-        }, {
-            triggerOnce: true,
-            offset: 'bottom-in-view'
-        });
+             setTimeout(function(){ $(formMessages).fadeOut(300); }, 3000);
     });
 
-    // Jump to bookmark
-    var _anim = function () {
-        $('html, body').animate({
-            scrollTop: $('.ico-funding').offset().top
-        }, 800, 'easeInOutExpo');
-    }
-
-
-    var _commonTab = $('.common-tab .nav li a'),
-        _tabPane = $('.tab-pane'),
-        _footerItem = $('.footer-nav li a');
-
-    _window.on('load', function () {
-        var loc = window.location.href;
-
-        if (/tab-campaign/.test(loc)) {
-            _commonTab.removeClass('active');
-            _tabPane.removeClass('show active');
-            $('.common-tab .nav li a[href^="#tab-campaign"]').addClass('active');
-            $('.tab-pane#tab-campaign').addClass('show active');
-            _footerItem.removeClass('active');
-            $('.footer-nav li a[href^="#tab-campaign"]').addClass('active');
-            _anim();
-        } else if (/tab-faqs/.test(loc)) {
-            _commonTab.removeClass('active');
-            _tabPane.removeClass('show active');
-            $('.common-tab .nav li a[href^="#tab-faqs"]').addClass('active');
-            $('.tab-pane#tab-faqs').addClass('show active');
-            _footerItem.removeClass('active');
-            $('.footer-nav li a[href^="#tab-faqs"]').addClass('active');
-            _anim();
-        } else if (/tab-update/.test(loc)) {
-            _commonTab.removeClass('active');
-            _tabPane.removeClass('show active');
-            $('.common-tab .nav li a[href^="#tab-update"]').addClass('active');
-            $('.tab-pane#tab-update').addClass('show active');
-            _footerItem.removeClass('active');
-            $('.footer-nav li a[href^="#tab-update"]').addClass('active');
-            _anim();
-        }
-    });
-
-    //test
-    $('.footer-nav').on('click', 'li a', function () {
-        if ($(this).attr('href') === "#tab-campaign") {
-            _commonTab.removeClass('active');
-            _tabPane.removeClass('show active');
-            $('.common-tab .nav li a[href^="#tab-campaign"]').addClass('active');
-            $('.tab-pane#tab-campaign').addClass('show active');
-            _footerItem.removeClass('active');
-            $('.footer-nav li a[href^="#tab-campaign"]').addClass('active');
-            _anim();
-        } else if ($(this).attr('href') === "#tab-faqs") {
-            _commonTab.removeClass('active');
-            _tabPane.removeClass('show active');
-            $('.common-tab .nav li a[href^="#tab-faqs"]').addClass('active');
-            $('.tab-pane#tab-faqs').addClass('show active');
-            _footerItem.removeClass('active');
-            $('.footer-nav li a[href^="#tab-faqs"]').addClass('active');
-            _anim();
-        } else if ($(this).attr('href') === "#tab-update") {
-            _commonTab.removeClass('active');
-            _tabPane.removeClass('show active');
-            $('.common-tab .nav li a[href^="#tab-update"]').addClass('active');
-            $('.tab-pane#tab-update').addClass('show active');
-            _footerItem.removeClass('active');
-            $('.footer-nav li a[href^="#tab-update"]').addClass('active');
-            _anim();
-        }
-    });
-
-    // Preloader js
-    function loader(_success) {
-        var obj = $('.o-preloader'),
-            inner = $('.o-preloader_inner');
-        var w = 0,
-            t = setInterval(function () {
-                w = w + 1;
-                inner.text(w + '%');
-                if (w === 100) {
-                    obj.addClass('open-page');
-                    obj.addClass('hide-loader');
-
-                    clearInterval(t);
-                    w = 0;
-                    if (_success) {
-                        return _success();
-                    }
+    var form1 = $('#subscribe_now');
+    var mailMessages = $('#mail-messages');
+    $(form1).submit(function(e) {
+        e.preventDefault();
+        var formData = $(form1).serialize();
+        $.ajax({
+                type: 'POST',
+                url: $(form1).attr('action'),
+                data: formData
+            })
+            .done(function(response) {
+                $(mailMessages).removeClass('error');
+                $(mailMessages).addClass('success');
+                $(mailMessages).text(response);
+                
+            })
+            .fail(function(data) {
+                $(mailMessages).removeClass('success');
+                $(mailMessages).addClass('error');
+                if (data.responseText !== '') {
+                    $(mailMessages).text(data.responseText);
+                } else {
+                    $(mailMessages).text('Oops! An error occured and your message could not be sent.'); /*--------- Contact submission erroe Message ---------------*/
                 }
-            }, 20);
-    }
-    loader();
+            });
+             setTimeout(function(){ $(mailMessages).fadeOut(300); }, 3000);
+    });
+});
+
+/* -------------- Mail function-end ----------*/
+$(document).ready(function($) {
+    /*----------------------- 6.Loader JS -------------------*/
+    $('.site-loader').fadeOut(600)
+
+/*----------------------- 7.gear box JS --------------------*/
+$('#Color_list li').on('click', function(){
+  var themeColor=$(this).attr('title');
+  $('#dynamic-style').attr('href', 'css/'+themeColor+'.css');
+});
+});
+/*----------------------- 8.Particles JS --------------------*/
+particlesJS("particles-js", {"particles":{"number":{"value":50,"density":{"enable":true,"value_area":1000}},"color":{"value":"#4e68f0"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
 
 
-}(jQuery));
+
