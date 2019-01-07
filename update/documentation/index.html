@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="eng">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bitency | ICO landing page template</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/responsive.css" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body data-spy="scroll" data-target=".scrollspy">
+<!--header start from here-->
+<header class="site-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 col-sm-7">			
+				<div id="bannr_text">
+					<span class="site-logo mt5"><a href="https://www.psthemes.co" target="_blank"><img src="images/ps-logo-2.png" alt="PSTHEMES" class="custom-logo"/></a></span>
+					<h1>Bitency HTML template documentation</h1>
+				</div>
+			</div><!--/col-->
+		</div><!--/row-->
+	</div><!--/container-->
+</header>
+<!---header end here-->
+<section class="document">
+			
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 scrollspy">
+        <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
+  			<li class="mt2"><a href="#installation">Installation</a></li>
+  			<li><a href="#included">What's Included</a></li>
+  			<li><a href="#html_structure">HTML Page Structure</a></li>
+  			<li class="nav-item">
+                <a class="nav-link" href="#components">Components</a>
+                <ul class="nav flex-sm-column small ml-md-3 ml-1 hidden-sm-down">
+                    <li class="nav-item"><a class="nav-link" href="#preloader">Preloader</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#favicon">Favicon</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#logo">Logo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#navigation">Navigation</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#basic_styling">Basic Styling</a>
+                <ul class="nav flex-sm-column small ml-md-3 ml-1 hidden-sm-down">
+                    <li class="nav-item"><a class="nav-link" href="#color_scheme">Color Scheme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bg_image">Background Image</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#font">Font</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#buttons">Button</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#page_layout">Grid</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#elements">Elements</a>
+                <ul class="nav flex-sm-column small ml-md-3 ml-1 hidden-sm-down">
+                	<li class="nav-item"><a class="nav-link" href="#countdown">Countdown</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#newsletter">Newsletter Form</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact_form">Contact Form</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#social_media">Social Media</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="#template_sections">Template Sections</a></li>
+            <li><a href="#helper">Helper Classes</a></li>
+  			<a href="mailto:pixelspeaks@gmail.com" class="btn-alpha btn-beta mt2 mb2 ps-btn">Need Support ?</a>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <section id="installation" style="padding: 0 0 30px;">
+      <h2> Installation </h2>
+      <p>Unzip the downloaded files to the local disk on your computer. Inside the extracted folder there will be a folder with documentation and a folder "assets" containing all source files. Upload the source files to your server via FTP. </p>
+     </section>
+        <section id="included">
+          <h2></span> What's Included</h2>
+          <div class="components-tree">
+            <ul>
+              	<li class="is-folder open">
+                <span>assets</span><br>
+	                <ul>
+				            <ul>
+			                <li class="is-folder"><span>css</span><i>Containing all css files</i></li>
+			                <li class="is-folder"><span>images</span><i>Here is a place to put your media files like logo, images, etc.</i></li>
+			                <li class="is-folder"><span>js</span><i>Containing all js files</i></li> 
+			                <li class="is-folder"><span>sass</span><i>Containing all scss files</i></li> 
+			                <li class="is-file"><span>index.html</span> <i>Main HTML file</i></li>
+                      <li class="is-file"><span>contact-mail.php</span> <i>Contact Form Submission PHP file</i></li>
+                      <li class="is-file"><span>newsletter.php</span> <i>Newsletter Form Submission PHP file</i></li>
+				            <li class="is-file"><span>.htaccess</span> <i>Configuration file</i></li>
+				            <li class="is-file"><span>favicon.icon</span> <i>Favicon icon</i></li>
+					        </ul>
+				        </li>
+				    </ul>
+              	</li>
+              
+            </ul>
+          </div>
+        </section><!--/Included-->
+        <section id="html_structure">
+			<h3>HTML page sturture</h3>
+  <pre>
+  &lt;html&gt;
+      &lt;head&gt;
+         [Page meta, page css files, page title, favicon etc]
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;div class="preloader"&gt;
+           [Preloader content]
+        &lt;/div&gt;
+        &lt;nav&gt;
+           [Logo, Main banner content]
+        &lt;/nav&gt;
+        &lt;section id="banner" class=""&gt;
+          [Banner content]
+        &lt;/section&gt;
+        &lt;section id="" class=""&gt;
+          [Section content]
+        &lt;/section&gt;
+        &lt;footer id="" class=""&gt;
+          [Footer content]
+        &lt;/footer&gt;
+          [Js files content]
+      &lt;/body&gt;
+  &lt;/html&gt;
+          </pre>
+
+        </section><!--/page scturcure-->
+	<section id="components"><h2>Components</h2>
+		<section id="preloader">
+			<h3>Preloader</h3>
+           	<p>Page Loading Transitions are enabled by default. If you wish to disable the page loading transition you can simply delete below section.</p>
+ <pre>
+ &lt;div class="site-loader"&gt;
+   [Loader Content]
+ &lt;/div&gt;
+</pre>
+        </section><!--/preloader-->
+        <section id="favicon">
+			<h3>Favicon</h3>
+            <p>Favicon is an icon associated with URL that is displayed at various places such as in a browser’s address bar or next to the site name in a bookmark list.
+            Following code is for favicon, to change just place your <code>favicon.ico</code> file in root path</p>
+            <div class="code_preview">
+              &lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;
+            </div>
+        </section><!--/favicon-->
+        <section id="logo">
+			<h3>Logo</h3>
+			<p>To change logo, place your logo file in <code>images</code> folder and find <code>navbar-brand</code> class in <code>index.html</code> file. Replace the current logo image name with yours.</p>
+	<pre>
+    &lt;a class="navbar-brand" href="index.html"&gt;
+        &lt;img src="images/logo.png" alt="logo image" class="img-fluid"/&gt;
+    &lt;/a&gt;
+  </pre>
+        </section><!--/logo-->
+        <section id="navigation">
+			<h3>Navigation</h3>
+			<p>Follwing section is for the Navbar menu, Find class <code>.nav-link</code> inside nav and make required changes in Navbar</p>
+    <pre>
+    &lt;nav class="navbar navbar-expand-lg navbar-togglable navbar-dark"&gt;
+        [Navbar Content]
+    &lt;/nav&gt;
+    </pre>
+        </section><!--/navigation-->
+	</section><!--/Components-->
+        
+	<section id="basic_styling"><h2>Basic Styling</h2>
+        <section id="color_scheme">
+			<h3>Color Scheme</h3>
+			<p>Bitency template come up with 7 preset color schemes. CSS files are separated based of color scheme, so you can easily use them. </p>
+			<p>Bitency template uses sass variable, so changing color scheme is much easier. You just need to add your color code at one place and it will apply everywhere.</p>
+			<p>To add your own color scheme, go to <code>template-color.scss</code> file inside <code> css folder</code> and change <code>PrimaryColor, SecondaryColor, AlternateColor</code> vairables color.</p>
+        </section><!--/color-scheme-->
+
+         <section id="bg_image">
+			<h3>Background Image / Icons</h3>
+			<p>Bitency template added background images path in <code>style.scss</code> background css rules.
+				and Icons path are added in <code>index.html</code> file.</p>
+			<p>To change background image or icons go to the respective section and change the image/icon name.</p>
+			<p>Please make sure your new images/icons is placed in <code>images</code> folder </p>
+        </section><!--/bg_image-->
+
+        <section id="font">
+			<h3>Font</h3>
+			<p>Bitency template uses Google WebFont, there are thousands of fonts available, you can select fonts as per your need from <a href="https://fonts.google.com/" target="_blank"> google fonts library</a></p>
+			<p>Find the current added font link inside the<code>index.html</code> file</p>
+			<div class="code_preview">
+        &lt;link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,700,800,900%7CWork+Sans:300,400,500" rel="stylesheet"&gt;
+				<br /><br />
+			</div>	
+			<p>In Order to change the fonts, you neeed to change the above link with your new google fonts link. and change <code>font-family</code> in <code>style.scss</code> in sass folder</p>
+			<p>You can learn more about how to use google fonts <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank"> here </a></p>
+        </section><!--/font family-->
+
+        <section id="buttons">
+			<h3>Buttons</h3>
+			<p>Bitency template uses <code>.btn-alpha</code> class name for define button, In order to change the button style, go to <code>style.scss</code> inside sass folder and make required changes. </p>
+			
+        </section><!--/buttons-->
+        <section id="page_layout">
+                  <h3>Page Layout</h3>
+                  <p>We have followed Bootstrap 4 standard layout</p>
+  <pre>
+    &lt;div class="container"&gt;
+       &lt;div class="row"&gt;
+          &lt;div class="col-lg-X"&gt;
+            .......
+          &lt;/div&gt;&lt;!--/col--&gt;
+        &lt;/div&gt;&lt;!--/row--&gt;
+    &lt;/div&gt;&lt;!--/container--&gt;
+  </pre>
+                  <p><code>&lt;div class="col-lg-X"&gt;</code> Define how many columns you want in row, Where X is value from 1 to 12.</p>
+                  <h4 class="mt3">Some Example layout for Page column </h4>
+                   	<div class="row">
+	                    <div class="col-lg-3">
+	                      	<div class="code_preview">col-lg-3</div>
+	                    </div>
+                        <div class="col-lg-3">
+                      		<div class="code_preview">col-lg-3</div>
+                        </div>
+                        <div class="col-lg-3">
+	                      	<div class="code_preview">col-lg-3</div>
+	                    </div>
+                        <div class="col-lg-3">
+                      		<div class="code_preview">col-lg-3</div>
+                        </div>
+                	</div><!--/row-->
+
+                	<div class="row">
+	                    <div class="col-lg-4">
+	                      	<div class="code_preview">col-lg-4</div>
+	                    </div>
+                        <div class="col-lg-4">
+                      		<div class="code_preview">col-lg-4</div>
+                        </div>
+                        <div class="col-lg-4">
+                      		<div class="code_preview">col-lg-4</div>
+                        </div>
+                	</div><!--/row-->
+
+                	<div class="row">
+	                    <div class="col-lg-6">
+	                      	<div class="code_preview">col-lg-6</div>
+	                    </div>
+                        <div class="col-lg-6">
+                      		<div class="code_preview">col-lg-6</div>
+                        </div>
+                	</div><!--/row-->
+                	<div class="row">
+	                    <div class="col-lg-12">
+	                      	<div class="code_preview">col-lg-12</div>
+	                    </div>
+                	</div><!--/row-->
+                
+        </section><!--/page_layout-->
+	</section><!--basic styling-->
+	<section id="elements"><h2>Elements</h2>
+
+	<section id="countdown">
+			<h3>Count Down</h3>
+			<p>Bitency ICO template use jquery basic count down.</p>
+			<p>You can easily change the ICO date, you just need to go to <code>main.js</code> file in <code>js</code> folder and find the following code</p>
+			<div class="code_preview">
+					 /*---- <code>Add you ICO date and time here</code>---*/<br />
+		        var endTime = new Date("October 20, 2018 18:00:00 PDT"); <br />        
+		        var endTime = (Date.parse(endTime)) / 1000;<br />
+		        var now = new Date();<br />
+		        var now = (Date.parse(now) / 1000);<br />
+		        var timeLeft = endTime - now;<br />
+		        var days = Math.floor(timeLeft / 86400); <br />
+		        var hours = Math.floor((timeLeft - (days * 86400)) / 3600);<br />
+		        var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);<br />
+		        var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));<br />
+		        if (days < "10") { days = "0" + days; }<br />
+		        if (hours < "10") { hours = "0" + hours; }<br />
+		        if (minutes < "10") { minutes = "0" + minutes; }<br />
+		        if (seconds < "10") { seconds = "0" + seconds; }<br />
+		        $(".days").html(days + "<span>Days</span>");<br />
+		        $(".hours").html(hours + "<span>Hours</span>");<br />
+		        $(".minutes").html(minutes + "<span>Minutes</span>");<br />
+		        $(".seconds").html(seconds + "<span>Seconds</span>");   <br />    
+				}<br />
+				setInterval(function() { makeTimer(); }, 1000);<br />
+				var NavBar = $('.navbar ');<br />
+			</div>
+			<p>In above code where it's showing <code>var endTime = new Date("September 10, 2018 18:00:00 PDT");</code>  replace current date and time with your date and time.</p>
+        </section><!--/countdown-->
+      
+        <section id="newsletter" class="newsletter">
+  			     <h3>Newsletter form</h3>
+  			     <p>To connect the newsletter subscribe form to your email account please enter your email address into the <code>newsletter.php</code>file under :<code>$recipient = "youremail@gmail.com";</code></p>
+             <p>Additionally you are able to change the subject line of the email you will get after sending a message for this please use the php line: <code>$subject = "Your Subject $email"; </code></p>
+	    </section><!---newletter-->
+        <section id="contact_form" class="contact-form mt3">
+             <h3>Contact form</h3>
+             <p>To connect the newsletter subscribe form to your email account please enter your email address into the <code>contact-mail.php</code>file under :<code>$recipient = "youremail@gmail.com";</code></p>
+             <p>Additionally you are able to change the subject line of the email you will get after sending a message for this please use the php line: <code>$subject = "Your Subject $email"; </code></p>
+        </section><!---contact-form-->
+
+<section id="social_media">
+  <h3>Social Media</h3>
+  <p>Below is code demostrate the social media section</p>
+  <pre>
+ &lt;div class="footer-social"&gt;
+   &lt;a href="#." class="btn btn-alpha btn-tw mb-2 mb-md-0"&gt; &lt;i class="fab fa-twitter mr-2"&gt; &lt;/i&gt; Twitter - 2.5k  &lt;/a&gt;
+   &lt;a href="#." class="btn btn-alpha btn-fb mb-2 mb-md-0"&gt; &lt;i class="fab fa-facebook mr-2"&gt; &lt;/i&gt; Facebook · 5.5k  &lt;/a&gt;
+   &lt;a href="#." class="btn btn-alpha btn-in mb-2 mb-md-0"&gt; &lt;i class="fab fa-linkedin-in mr-2"&gt; &lt;/i&gt; Linkedin · 3.5k  &lt;/a&gt;
+ &lt;/div&gt;
+  </pre>
+
+  <p>Add your social media links at the place of <code>#.</code></p>
+  <p>Bitency template uses <a href="http://fontawesome.io/icons/" target="_blank">font awesome</a> icons, to change/add social icons go to font awesome and select your icons.</p>
+</section><!--/social media-->      
+       
+	</section><!--elements-->
+
+	<section id="template_sections">
+			<h3>Template Sections</h3>
+			<p>Bitency template have many other sections, to make changes in sections go to respective section and make required changes. HTML is properly commented and arranged section wise, so we sure you will be easily make necessary changes</p>
+   	</section><!--/template_sections-->
+	
+    <section id="helper">
+            <h3>Utilities Classes</h3>
+            <p>Bitency template uses standard bootstrap 4 utilities classes like for margin, padding etc. You can learn more about utilities classes <a href="https://getbootstrap.com/docs/4.1/utilities/borders/" target="_blank"> here </a>and use them as per your need</p>
+              
+          </section><!--/helper classes-->
+
+      </div><!--/col-9-->
+    </div><!--/row-->
+  </div><!--/container-->
+</section>
+ 
+
+
+
+<footer class="site-footer text-center">
+	<p class="copy">All rights reserved &copy;<strong> PS themes </strong></p>			
+	
+</footer>
+<script type="text/javascript" src="js/jquery.min.js"></script>	
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+	$('#nav').affix({
+    offset: {     
+      top: $('#nav').offset().top,
+      bottom: ($('footer').outerHeight(true) + $('.application').outerHeight(true)) + 200
+    }
+});
+</script>
+</body>
+</html>
