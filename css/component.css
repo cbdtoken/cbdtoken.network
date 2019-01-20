@@ -1,0 +1,232 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Muli');	/*importing muli font*/
+
+/* "!important is used to overwrite the existing value for a particular property" */
+
+body {
+    color: #999 !important;
+    text-decoration: none !important;
+	font-family: 'Muli', sans-serif !important;
+}
+
+a { color:#4E9455 !important; }
+
+a:hover { color:#91c82c !important; }
+
+main .container {
+	padding: 70px 0 !important;
+}
+.form-width {			/*for form card*/
+	padding: 0px 30px 15px;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	box-shadow: 0px 2px 1px #ddd;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-header {		/*header of the form*/
+	margin: 0 -30px;
+    margin-bottom: 30px !important;
+	background: #2b6320; /* 216C2A */
+	padding: 15px;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+	color:white !important;
+}
+
+.btn-primary {
+	background-color: #2b6320 !important;
+	border-color: #2b6320 !important;	
+}
+.btn-primary:active,
+.btn-primary:focus {
+	border-color: #92c63b !important;
+}
+
+a:focus, a:hover {
+    text-decoration: none !important;
+}
+
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus, 
+input.checkbox:focus {
+	outline:0px auto -webkit-focus-ring-color !important;
+	background-color: #91c82c !important;
+	color: #fff;
+}
+.btn-default.focus, .btn-default:focus, .btn-default:hover {
+	color: #fff !important;
+    text-decoration: none;
+}
+.btn:active {
+	box-shadow:none !important;
+}
+.btn-default {				/*customized buttons eg: send, register, done.... present in each form*/
+	width:100%;
+	border-radius: 2px !important;
+	box-shadow:1px 4px 7px 0px rgba(99, 97, 97, 0.24);
+	color: #eee !important;
+	background-color: #529837 !important;
+	border-color: transparent !important;
+}
+.btn.focus, .btn:focus {
+	box-shadow:none !important;
+}
+.form-group {
+	height: 40px;	
+}
+.form-control {
+	padding-left: 36px !important;	
+}
+.form-control:focus {
+	border-color: #ced4da !important;
+    box-shadow: none !important;
+}
+.iconalign {		/*icon alignment*/
+	top: -38px;
+    position: relative;
+    padding: 11px;
+}
+
+
+/*CONTACT US FORM*/
+.btn-browse {					/*BROWSE button*/
+	background-color:#007bff;
+	color:white;
+	border-radius: 0px !important;
+	border-bottom-right-radius: 4px !important;
+	border-top-right-radius: 4px !important;
+	height:40px;
+}
+.btn-browse:hover, .btn-browse:focus {
+	background-color:#007bff !important;
+	color:white !important;
+}
+.file {
+	visibility:hidden;
+	position:absolute;
+}
+
+
+/*Login-1 FORM*/
+.icon-button {
+	background-color: #007bff;
+	border-radius: 3.6rem;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	margin: 0 5px;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 50px;
+}
+/* Circle */
+.icon-button span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 0;
+}
+.icon-button:hover span {
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 3.6rem;
+	margin: -1.8rem;
+	background-color: #4099ff;
+}
+/* Icons */
+.icon-button i {
+	background: none;
+	color: white;
+	height: 50px;
+	left: 0;
+	line-height: 50px;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 50px;
+	z-index: 10;
+}
+.icon-button:hover .icon-twitter,
+.icon-button:hover .icon-facebook,
+.icon-button:hover .icon-google-plus {
+	color: white;
+}
+
+
+/*rating of the feedback form*/
+.rating{
+	direction: rtl;
+}
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+.rating:not(:checked) > label {
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+}
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+.rating > input:checked ~ label {
+    color: #007bff;
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #007bff;
+}
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #007bff;
+}
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+
+/*to avoid safari select field shadow*/
+select {
+	-webkit-appearance:none !important;
+	-moz-appearance:none !important;
+	-o-appearance:none !important;
+}
+
+
+
+

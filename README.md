@@ -1,2 +1,2 @@
-# website
-Official Website for CBD Token
+# registration
+native registration app

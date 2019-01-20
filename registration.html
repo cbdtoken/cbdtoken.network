@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Vendor or Consumer</title>
+    <title>Register</title>
     <link href="css/component.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
@@ -54,14 +54,50 @@
         <form role="form" class="form-width">
 			
           <!--header for the form -->  
-          <h4 class="form-header text-center">Vendor or Consumer</h4>          		  
+          <h4 class="form-header text-center">Register for Marketplace</h4>          		  
           
-          	<p>Which of the following purposes do you plan on primarily using the <strong><u>CBD Marketplace</u></strong> for?</p>
-        
-        	<button type="button" class="btn btn-primary btn-lg btn-block">Vendor</button>
-        	<h4 style="text-align:center;">&mdash; or &mdash;</h4>
-        	<button type="button" class="btn btn-primary btn-lg btn-block">Consumer</button>
-        				      
+          <!--div block for email input field -->
+          <div class="form-group">
+   				<input type="email" class="form-control" placeholder="E-Mail">
+                <i class="fa fa-envelope iconalign"></i>
+  		  </div>         
+  		  
+    	<div class="form-group">
+            <input type="text" class="form-control" placeholder="Username" />
+            <i class="fa fa-user iconalign"></i>
+  		</div>   		  
+          
+          <!--div block for password input field -->
+          <div class="form-group">
+   				<input type="password" class="form-control" placeholder="Password">
+                <i class="fa fa-lock iconalign"></i>
+  		  </div>
+          
+          <!--div block for confirm passsword input field -->
+          <div class="form-group">
+   				<input type="password" class="form-control" placeholder="Confirm Password">
+                <i class="fa fa-lock iconalign"></i>
+  		  </div>
+          
+          <!--div block for checkbox -->
+          <div class="custom-control custom-checkbox mb-3">
+  				<input type="checkbox" class="custom-control-input" id="customCheck2">
+  				<label class="custom-control-label" for="customCheck2">I agree with the terms & conditions.</label>
+		  </div>
+          
+          <!--div block for register button -->
+          <div class="form-group text-center">
+          		<button class="btn btn-default col-md-6" type="submit">Register</button>
+          </div>
+          
+          <!--horizontal line -->  
+          <hr />
+          
+          <!--div block for text -->  
+          <div class="text-center">
+            	<text>Already have an account ?</text>&nbsp;<a href="#">Login</a>
+          </div>
+          
         </form>
         <!--form end -->
            
@@ -76,7 +112,11 @@
   <div class="container">
     <span class="text-muted">Please check out our <strong><a href="terms.html">Terms and Conditions</a></strong> and <strong><a href="privacy.html">Privacy Policy</a></strong>.</span>
   </div>
-</footer>   
+</footer>
+ 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
  
 </body>
 </html>
