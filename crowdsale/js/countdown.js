@@ -1,4 +1,4 @@
-    CountDownTimer('02/11/2019 11:0 AM', 'countdown');
+    CountDownTimer('02/12/2019 9:0 AM', 'countdown');
 
     function CountDownTimer(dt, id)
     {
