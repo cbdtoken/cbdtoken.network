@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>Purchase CBD Token</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta charset="UTF-8">
+		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+		
+		<style type="text/css">
+			#num-error {color:#c00;}
+			.form-control:disabled, .form-control[readonly] {
+				background-color: transparent;
+			}	
+			.errormsg { color:#c00; }		
+		</style>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	</head>
+	<body>
+	
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">&#x1F343; CBD Token</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Purchase <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/privacy-policy.html">Privacy Policy</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<main role="main" class="container" style="margin-top: 80px;">	
+	<div class="starter-template">
+	<h1>CBD Crowdsale</h1>
+	<p class="lead">Receive 50 CBD for every 1 TRX</p>	
+	<p>Note: You must have TRX Frozen for ENERGY or at least 1 additional TRX to cover transaction costs.</p>
+	<p id="errormsg" class="errormsg">IMPORTANT: You must be logged into <a href="https://chrome.google.com/webstore/detail/tronlink/ibnejdfjmmkpcnlpebklmnkoeoihofec" target="_blank">TronLink</a> to use this page.</p>
+	<fieldset disabled>
+	<div class="form-group">
+	<label for="exampleFormControlInput1">TRON Wallet Address</label>
+
+	<input id="TronWalletAddress" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Loading...">
+    <small class="form-text text-muted">Double Check TRON Wallet Address Above.</small>	
+	</div>
+	</fieldset>
+	<div class="form-group">
+
+      <label for="inlineFormInputGroup">Number of TRX You Are Sending (whole numbers!)</label>
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">SEND</div>
+        </div>
+        <input type="text" class="form-control" id="trxnum" placeholder="Number of TRX">
+      </div>
+      
+    <p id="num-error"></p>
+
+	<fieldset disabled>
+	
+    <div class="form-group">
+      <label for="disabledTextInput">Number of CBD You Will Receive</label>
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">RECEIVE</div>
+        </div>
+        <input type="text" class="form-control" id="trxvalue" placeholder="CBD Tokens (updates automatically)">
+      </div>      
+      
+    </div>
+    </fieldset>
+      
+	</div>
+
+
+	<button type="submit" id="purchase" class="btn btn-primary">Submit</button>
+
+	</div>
+</main><!-- /.container -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/mod.js"></script>
+
+<script type="text/javascript">
+$('#trxnum').on('input', function() { 
+	tokenval = $(this).val(); // get the current value of the input field.
+	//var newnumber = parseInt(tokenval.toString().replace(".", ""), 10);	
+	$('#num-error').text("");
+	if(!jQuery.isNumeric(tokenval)) {
+        $('#num-error').text("* numbers only");
+        $(this).val("");
+    }
+    else {    
+    	var newnumber = parseInt(tokenval.toString().replace(".", ""), 10);
+    	tokencalc = newnumber * 50;
+    	tokenamt = tokencalc + " CBD"; 
+        //$('#trxvalue').text(tokencalc);
+        $(this).val(newnumber);
+        $('#trxvalue').attr("placeholder", tokenamt);
+    }		
+});
+/*
+$.getJSON("https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD")
+	.done(function(data){
+	    $.each(data, function (index, value) {
+    		//console.log(value);
+    		var trx = value.toFixed(3);
+        	$('#trxusd').text(trx);        		
+		});		
+});
+*/
+</script>
+	</body>
+</html>
